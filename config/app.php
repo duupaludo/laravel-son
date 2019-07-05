@@ -1,5 +1,10 @@
 <?php
 
+use Bootstrapper\BootstrapperL5ServiceProvider;
+use Jrean\UserVerification\UserVerificationServiceProvider;
+use Kris\LaravelFormBuilder\FormBuilderServiceProvider;
+use Prettus\Repository\Providers\RepositoryServiceProvider;
+
 return [
 
     /*
@@ -77,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-BR',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,6 +172,12 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        BootstrapperL5ServiceProvider::class,
+        FormBuilderServiceProvider::class,
+        RepositoryServiceProvider::class,
+        UserVerificationServiceProvider::class,
+
+
 
         /*
          * Application Service Providers...
@@ -176,6 +187,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        \App\Providers\RepositoryServiceProvider::class
 
     ],
 
@@ -225,6 +237,15 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Table' => \Bootstrapper\Facades\Table::class,
+        'Icon' => \Bootstrapper\Facades\Icon::class,
+        'Alert' => \Bootstrapper\Facades\Alert::class,
+        'Button' => \Bootstrapper\Facades\Button::class,
+        'Navbar' => \Bootstrapper\Facades\Navbar::class,
+        'Navigation' => \Bootstrapper\Facades\Navigation::class,
+        'FormBuilder' => \Kris\LaravelFormBuilder\Facades\FormBuilder::class,
+        'UserVerification' => \Jrean\UserVerification\Facades\UserVerification::class
 
     ],
 
